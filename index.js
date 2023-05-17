@@ -1,7 +1,28 @@
 // Eloquent Javascript exercises
 
-// The Locked Box
+//Quoting Style
+// let text = "'I'm the cook,' he said, 'it's my job.'";
 
+// console.log(text.replace(/(^|\W)'|'(\W|$)/g, '$1"$2'));
+
+// Regexp Gold
+// let carCat = /ca[rt]/;
+// let popProp = /pr?op/;
+// let ferryFerrary = /ferr(et|y|ari)/;
+// let wordIous = /ious\b/;
+// let spaceSpecial = /\s[.,:;]/;
+// let moreThanSix = /\w{7}/;
+// let noEs = /\b[^We]+\b/i;
+
+// console.log(carCat.test("cat"));
+// console.log(popProp.test("pop"));
+// console.log(ferryFerrary.test("ferrari"));
+// console.log(wordIous.test("delicious"));
+// console.log(spaceSpecial.test(" ;"));
+// console.log(moreThanSix.test("Sezqweqweqwig"));
+// console.log(noEs.test("mac"));
+
+// The Locked Box
 // const box = {
 //   locked: true,
 //   unlock() {
