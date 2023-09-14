@@ -1,5 +1,39 @@
 // Eloquent Javascript exercises
 
+// Events
+//Balloon
+
+// const balloonInflation = () => {
+//   const balloonResize = (event) => {
+//     const balloon = document.querySelector(".events__balloon");
+//     const style = window
+//       .getComputedStyle(balloon, null)
+//       .getPropertyValue("font-size");
+//     const fontSize = parseFloat(style);
+
+//     let updatedFontSize;
+
+//     if (event.key == "ArrowUp") {
+//       event.preventDefault();
+//       balloon.style.fontSize = fontSize + 10 + "px";
+//       updatedFontSize = fontSize + 10;
+//     }
+//     if (event.key == "ArrowDown") {
+//       event.preventDefault();
+//       balloon.style.fontSize = fontSize - 10 + "px";
+//     }
+
+//     if (updatedFontSize > 100) {
+//       balloon.innerHTML = balloon.innerHTML.replace("🎈", "💥");
+//       window.removeEventListener("keydown", balloonResize);
+//     }
+//   };
+
+//   window.addEventListener("keydown", balloonResize);
+// };
+
+// balloonInflation();
+
 //Quoting Style
 // let text = "'I'm the cook,' he said, 'it's my job.'";
 
