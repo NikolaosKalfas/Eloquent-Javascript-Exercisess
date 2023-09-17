@@ -12,6 +12,7 @@ section,div {
     padding: 10px;
 }
 
+/* Chapter 15 - Handling Events */
 .events__mouse-trail-item {
     position: absolute;
     width: 10px;
@@ -36,3 +37,4 @@ section,div {
     background-color: red;
     color: white;
 }
+/* Chapter 15 - Handling Events end*/
