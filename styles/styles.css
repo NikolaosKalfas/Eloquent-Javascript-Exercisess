@@ -8,6 +8,31 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-section {
+section,div {
     padding: 10px;
+}
+
+.events__mouse-trail-item {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+}
+
+.events__tab-btn-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.events__button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+
+.events__button--selected {
+    background-color: red;
+    color: white;
 }

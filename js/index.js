@@ -1,6 +1,90 @@
 // Eloquent Javascript exercises
 
 // Events
+//Tabs
+
+// const asTabs = (node) => {
+//   const container = document.querySelector(node);
+//   const tabbedElements = document.querySelectorAll("[data-tabname]");
+
+//   //create button container
+//   const btnContainer = document.createElement("div");
+//   btnContainer.className = "events__tab-btn-container";
+//   container.prepend(btnContainer);
+
+//   //create buttons
+//   for (let i = 0; i < tabbedElements.length; i++) {
+//     let button = document.createElement("button");
+//     button.className = `events__button-${i + 1} events__button`;
+//     button.innerHTML = tabbedElements[i].getAttribute("data-tabname");
+
+//     if (i == 0) {
+//       button.classList.add("events__button--selected");
+//     }
+//     btnContainer.append(button);
+//   }
+
+//   //hide content
+//   tabbedElements.forEach((node, i) => {
+//     if (i == 0) {
+//       return;
+//     }
+//     node.style.display = "none";
+//   });
+
+//   //display tab
+//   const buttons = document.querySelectorAll(".events__button");
+
+//   const swapTabs = (event) => {
+//     event.preventDefault();
+//     const button = event.target;
+
+//     for (const btn of buttons) {
+//       btn.classList.remove("events__button--selected");
+//     }
+
+//     //hide all tabs
+//     tabbedElements.forEach((node) => {
+//       node.style.display = "none";
+//     });
+
+//     //show the one we want
+//     tabbedElements.forEach((element) => {
+//       if (element.dataset.tabname != button.innerHTML) {
+//         return element;
+//       }
+
+//       element.style.display = "block";
+//     });
+
+//     //style selected button
+//     button.classList.add("events__button--selected");
+//   };
+
+//   buttons.forEach((button) => {
+//     button.addEventListener("click", swapTabs);
+//   });
+// };
+
+// asTabs(".events__tab-panel");
+
+//Mouse trail
+// const squares = document.querySelectorAll(".events__mouse-trail-item");
+
+// console.log(squares);
+
+// const mouseTrail = (event) => {
+//   let y = event.pageY;
+//   let x = event.pageX;
+
+//   squares.forEach((square) => {
+//     square.style.left = x + "px";
+//     square.style.top = y + "px";
+//   });
+// };
+
+// document.addEventListener("mousemove", mouseTrail);
+
 //Balloon
 
 // const balloonInflation = () => {
