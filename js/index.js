@@ -1,5 +1,34 @@
 // Eloquent Javascript exercises
 
+//Drawing on canvas
+
+//Shapes
+
+function trapezoid() {
+  let context = document.querySelector(".trapezoid").getContext("2d");
+  context.beginPath();
+  context.moveTo(50, 30);
+  context.lineTo(10, 100);
+  context.lineTo(200, 100);
+  context.lineTo(170, 30);
+  context.lineTo(50, 30);
+  context.stroke();
+}
+
+function redDiamond() {
+  let context = document.querySelector(".red-diamond").getContext("2d");
+  context.beginPath();
+  context.moveTo(50, 50);
+  context.lineTo(10, 100);
+  context.lineTo(50, 150);
+  context.lineTo(90, 100);
+  context.fillStyle = "red";
+  context.fill();
+}
+
+trapezoid();
+redDiamond();
+
 // Events
 //Tabs
 
