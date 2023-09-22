@@ -3,72 +3,116 @@
 //Drawing on canvas
 
 //Shapes
+// let context = document
+//   .querySelector(".canvas-container__bouncing-ball")
+//   .getContext("2d");
 
-var results = [
-  { name: "Satisfied", count: 1043, color: "lightblue" },
-  { name: "Neutral", count: 563, color: "lightgreen" },
-  { name: "Unsatisfied", count: 510, color: "pink" },
-  { name: "No comment", count: 175, color: "silver" },
-];
+// let y = 300;
+// let radius = 30;
+// let speedY = 100;
 
-function pieChart() {
-  let context = document.querySelector(".pie-chart").getContext("2d");
-  let total = results.reduce((sum, { count }) => sum + count, 0);
-  let currentAngle = -0.5 * Math.PI;
-  let centerX = 300,
-    centerY = 150;
+// function bouncingBall(step) {
+//   context.clearRect(0, 0, 400, 400);
+//   context.strokeStyle = "blue";
+//   context.lineWidth = 4;
+//   context.strokeRect(25, 25, 350, 350);
 
-  // Add code to draw the slice labels in this loop.
-  for (let result of results) {
-    let sliceAngle = (result.count / total) * 2 * Math.PI;
-    context.beginPath();
-    context.arc(centerX, centerY, 100, currentAngle, currentAngle + sliceAngle);
+//   y += step * speedY;
+//   if (y < 25 + radius || y > 375 - radius) {
+//     speedY = -speedY;
+//   }
+//   context.fillStyle = "red";
+//   context.beginPath();
+//   context.arc(200, y, radius, 0, 7);
+//   context.fill();
+// }
 
-    let middleAngle = currentAngle + 0.5 * sliceAngle;
-    let textX = Math.cos(middleAngle) * 120 + centerX;
-    let textY = Math.sin(middleAngle) * 120 + centerY;
-    context.textBaseLine = "middle";
-    if (Math.cos(middleAngle) > 0) {
-      context.textAlign = "left";
-    } else {
-      context.textAlign = "right";
-    }
-    context.font = "15px sans-serif";
-    context.fillStyle = "black";
-    context.fillText(result.name, textX, textY);
+// let lastTime = null;
 
-    currentAngle += sliceAngle;
-    context.lineTo(centerX, centerY);
-    context.fillStyle = result.color;
-    context.fill();
-  }
-}
+// function frame(time) {
+//   if (lastTime != null) {
+//     updateAnimation(Math.min(100, time - lastTime) / 1000);
+//   }
+//   lastTime = time;
+//   requestAnimationFrame(frame);
+// }
+// requestAnimationFrame(frame);
 
-function trapezoid() {
-  let context = document.querySelector(".trapezoid").getContext("2d");
-  context.beginPath();
-  context.moveTo(50, 30);
-  context.lineTo(10, 100);
-  context.lineTo(200, 100);
-  context.lineTo(170, 30);
-  context.lineTo(50, 30);
-  context.stroke();
-}
+// function updateAnimation(step) {
+//   bouncingBall(step);
+// }
 
-function redDiamond() {
-  let context = document.querySelector(".red-diamond").getContext("2d");
-  context.beginPath();
-  context.moveTo(50, 50);
-  context.lineTo(10, 100);
-  context.lineTo(50, 150);
-  context.lineTo(90, 100);
-  context.fillStyle = "red";
-  context.fill();
-}
+// var results = [
+//   { name: "Satisfied", count: 1043, color: "lightblue" },
+//   { name: "Neutral", count: 563, color: "lightgreen" },
+//   { name: "Unsatisfied", count: 510, color: "pink" },
+//   { name: "No comment", count: 175, color: "silver" },
+// ];
 
-pieChart();
-trapezoid();
-redDiamond();
+// function pieChart() {
+//   let context = document
+//     .querySelector(".canvas-container__pie-chart")
+//     .getContext("2d");
+//   let total = results.reduce((sum, { count }) => sum + count, 0);
+//   let currentAngle = -0.5 * Math.PI;
+//   let centerX = 300,
+//     centerY = 150;
+
+//   // Add code to draw the slice labels in this loop.
+//   for (let result of results) {
+//     let sliceAngle = (result.count / total) * 2 * Math.PI;
+//     context.beginPath();
+//     context.arc(centerX, centerY, 100, currentAngle, currentAngle + sliceAngle);
+
+//     let middleAngle = currentAngle + 0.5 * sliceAngle;
+//     let textX = Math.cos(middleAngle) * 120 + centerX;
+//     let textY = Math.sin(middleAngle) * 120 + centerY;
+//     context.textBaseLine = "middle";
+//     if (Math.cos(middleAngle) > 0) {
+//       context.textAlign = "left";
+//     } else {
+//       context.textAlign = "right";
+//     }
+//     context.font = "15px sans-serif";
+//     context.fillStyle = "black";
+//     context.fillText(result.name, textX, textY);
+
+//     currentAngle += sliceAngle;
+//     context.lineTo(centerX, centerY);
+//     context.fillStyle = result.color;
+//     context.fill();
+//   }
+// }
+
+// function trapezoid() {
+//   let context = document
+//     .querySelector(".canvas-container__trapezoid")
+//     .getContext("2d");
+//   context.beginPath();
+//   context.moveTo(50, 30);
+//   context.lineTo(10, 100);
+//   context.lineTo(200, 100);
+//   context.lineTo(170, 30);
+//   context.lineTo(50, 30);
+//   context.stroke();
+// }
+
+// function redDiamond() {
+//   let context = document
+//     .querySelector(".canvas-container__red-diamond")
+//     .getContext("2d");
+//   context.beginPath();
+//   context.moveTo(50, 50);
+//   context.lineTo(10, 100);
+//   context.lineTo(50, 150);
+//   context.lineTo(90, 100);
+//   context.fillStyle = "red";
+//   context.fill();
+// }
+
+// pieChart();
+// trapezoid();
+// redDiamond();
 
 // Events
 //Tabs
