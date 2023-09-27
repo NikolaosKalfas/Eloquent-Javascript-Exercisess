@@ -1,7 +1,79 @@
 // Eloquent Javascript exercises
 
-//Drawing on canvas
+//HTTP and Forms
 
+//A Javascript Workbench
+// function evalAndReturn(code) {
+//   eval(code);
+
+//   return code;
+// }
+
+// const container = document.querySelector(".form-container");
+// const textarea = document.getElementById("form-container__textarea");
+// const button = document.getElementById("form-container__button");
+
+// function selectAndEval(field) {
+//   const valueNode = container.querySelector("#form-container__output");
+
+//   if (valueNode) {
+//     valueNode.remove();
+//   }
+
+//   const fieldValueNode = document.createElement("p");
+//   fieldValueNode.setAttribute("id", "form-container__output");
+
+//   fieldValueNode.textContent = field.value;
+
+//   container.appendChild(fieldValueNode);
+// }
+
+// button.addEventListener("click", () => {
+//   try {
+//     selectAndEval(textarea);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
+
+//Content Negotiation
+// function fetchJSON() {
+//   fetch("https://eloquentjavascript.net/author", {
+//     headers: {
+//       Accept: "application/json",
+//     },
+//   })
+//     .then((resp) => resp.json())
+//     .then((data) => console.log(data));
+// }
+
+// fetchJSON();
+
+// function fetchHTML() {
+//   fetch("https://eloquentjavascript.net/author", {
+//     headers: {
+//       Accept: "text/html",
+//     },
+//   })
+//     .then((resp) => resp.text())
+//     .then((data) => console.log(data));
+// }
+
+// fetchHTML();
+
+// function fetchPlain() {
+//   fetch("https://eloquentjavascript.net/author", {
+//     headers: {
+//       Accept: "text/plain",
+//     },
+//   })
+//     .then((resp) => resp.text())
+//     .then((data) => console.log(data));
+// }
+
+// fetchPlain();
+
+//Drawing on canvas
 //Shapes
 // let context = document
 //   .querySelector(".canvas-container__bouncing-ball")

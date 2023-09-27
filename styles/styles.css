@@ -20,6 +20,30 @@ a {
     text-decoration: none;
 }
 
+/* Chapter 18 - HTTP and Forms */
+
+textarea {
+    margin: 10px 0;
+    display: block;
+    resize: none;
+}
+
+button {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: green;
+    color: white
+}
+
+button:hover, button:focus {
+    background-color: darkgreen;
+}
+
+/* Chapter 18 - HTTP and Forms end */
+
 /* Chapter 16 - A Platform Game */
 .background {
     background: rgb(52,166,251);
