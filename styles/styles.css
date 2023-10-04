@@ -35,7 +35,9 @@ button {
     border: 1px solid black;
     cursor: pointer;
     background-color: green;
-    color: white
+    color: white;
+    min-width: 100px;
+    margin: 5px 0;
 }
 
 button:hover, button:focus {
