@@ -40,6 +40,10 @@ button {
     margin: 5px 0;
 }
 
+button:disabled {
+    background-color: grey;
+}
+
 button:hover, button:focus {
     background-color: darkgreen;
 }

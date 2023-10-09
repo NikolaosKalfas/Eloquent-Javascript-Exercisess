@@ -109,6 +109,27 @@ PictureCanvas.prototype.touch = function (startEvent, onDown) {
   this.dom.addEventListener("touchend", end);
 };
 
+function keyEventsHandler(event) {
+  const saveBtn = document.querySelector(".save-btn");
+  const loadBtn = document.querySelector(".load-btn");
+  const undoBtn = document.querySelector(".undo-btn");
+
+  if (event.key === "s") {
+    event.preventDefault();
+    saveBtn.focus();
+  }
+
+  if (event.key === "l") {
+    event.preventDefault();
+    loadBtn.focus();
+  }
+
+  if (event.ctrlKey && event.key === "z") {
+    event.preventDefault();
+    undoBtn.focus();
+  }
+}
+
 var PixelEditor = class PixelEditor {
   constructor(state, config) {
     let { tools, controls, dispatch } = config;
@@ -122,7 +143,12 @@ var PixelEditor = class PixelEditor {
     this.controls = controls.map((Control) => new Control(state, config));
     this.dom = elt(
       "div",
-      {},
+      {
+        tabIndex: 0,
+        onkeydown: (event) => {
+          keyEventsHandler(event);
+        },
+      },
       this.canvas.dom,
       elt("br"),
       ...this.controls.reduce((a, c) => a.concat(" ", c.dom), [])
@@ -239,6 +265,7 @@ var SaveButton = class SaveButton {
     this.dom = elt(
       "button",
       {
+        classList: "save-btn",
         onclick: () => this.save(),
       },
       "💾 Save"
@@ -265,6 +292,7 @@ var LoadButton = class LoadButton {
     this.dom = elt(
       "button",
       {
+        classList: "load-btn",
         onclick: () => startLoad(dispatch),
       },
       "📁 Load"
@@ -340,6 +368,7 @@ var UndoButton = class UndoButton {
     this.dom = elt(
       "button",
       {
+        classList: "undo-btn",
         onclick: () => dispatch({ undo: true }),
         disabled: state.done.length == 0,
       },
