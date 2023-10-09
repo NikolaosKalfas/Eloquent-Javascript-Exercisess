@@ -109,27 +109,6 @@ PictureCanvas.prototype.touch = function (startEvent, onDown) {
   this.dom.addEventListener("touchend", end);
 };
 
-function keyEventsHandler(event) {
-  const saveBtn = document.querySelector(".save-btn");
-  const loadBtn = document.querySelector(".load-btn");
-  const undoBtn = document.querySelector(".undo-btn");
-
-  if (event.key === "s") {
-    event.preventDefault();
-    saveBtn.focus();
-  }
-
-  if (event.key === "l") {
-    event.preventDefault();
-    loadBtn.focus();
-  }
-
-  if (event.ctrlKey && event.key === "z") {
-    event.preventDefault();
-    undoBtn.focus();
-  }
-}
-
 var PixelEditor = class PixelEditor {
   constructor(state, config) {
     let { tools, controls, dispatch } = config;
@@ -146,13 +125,45 @@ var PixelEditor = class PixelEditor {
       {
         tabIndex: 0,
         onkeydown: (event) => {
-          keyEventsHandler(event);
+          this.keyEventsHandler(event, config);
         },
       },
       this.canvas.dom,
       elt("br"),
       ...this.controls.reduce((a, c) => a.concat(" ", c.dom), [])
     );
+
+    console.log(config);
+  }
+
+  keyEventsHandler(event, config) {
+    const saveBtn = document.querySelector(".save-btn");
+    const loadBtn = document.querySelector(".load-btn");
+    const undoBtn = document.querySelector(".undo-btn");
+
+    if (event.key === "s") {
+      event.preventDefault();
+      saveBtn.focus();
+    }
+
+    if (event.key === "l") {
+      event.preventDefault();
+      loadBtn.focus();
+    }
+
+    if (event.ctrlKey && event.key === "z") {
+      event.preventDefault();
+      undoBtn.focus();
+      config.dispatch({ undo: true });
+    } else if (!event.ctrlKey && !event.metaKey && !event.altKey) {
+      for (let tool of Object.keys(config.tools)) {
+        if (tool[0] == event.key) {
+          event.preventDefault();
+          config.dispatch({ tool });
+          return;
+        }
+      }
+    }
   }
   syncState(state) {
     this.state = state;
