@@ -1,0 +1,23 @@
+{
+  "name": "eloquent-javascript-exercisess",
+  "version": "1.0.0",
+  "description": "Exercises from the book",
+  "main": "index.js",
+  "dependencies": {
+    "ecstatic": "^4.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikolaosKalfas/Eloquent-Javascript-Exercisess.git"
+  },
+  "author": "Nikos Kalfas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikolaosKalfas/Eloquent-Javascript-Exercisess/issues"
+  },
+  "homepage": "https://github.com/NikolaosKalfas/Eloquent-Javascript-Exercisess#readme"
+}
