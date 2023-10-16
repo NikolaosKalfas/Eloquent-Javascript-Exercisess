@@ -20,6 +20,10 @@ a {
     text-decoration: none;
 }
 
+nav a {
+    margin-right: 10px;
+}
+
 /* Chapter 18 - HTTP and Forms */
 
 textarea {
